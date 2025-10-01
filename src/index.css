@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@plugin 'tailwind-scrollbar' {
+  nocompatible: true;
+  preferredStrategy: 'pseudoelements';
+}
+
 body {
   -webkit-font-smoothing: antialiased;
 }
