@@ -9,12 +9,18 @@ export default defineConfig([
   globalIgnores(['dist']),
   {
     files: ['**/*.{ts,tsx}'],
+    "extends": ["@rocketseat/eslint-config/react"],
     extends: [
+      "@rocketseat/eslint-config/react",
       js.configs.recommended,
       tseslint.configs.recommended,
-      reactHooks.configs['recommended-latest'],
+      reactHooks.configs['recommended-latest', "@rocketseat/eslint-config/react"],
       reactRefresh.configs.vite,
     ],
+    plugins: ["simple-import-sort"],
+    rules: {
+      "simple-import-sort/imports": "error"
+    },
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
