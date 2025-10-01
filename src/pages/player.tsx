@@ -1,4 +1,4 @@
-import { ChevronDown, MessageCircle } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
 import { Header } from '../components/header'
 import { Video } from '../components/video'
 import { Modules } from '../components/modules'
@@ -22,7 +22,7 @@ export function Player() {
             <Video />
           </div>
 
-          <aside className="w-80 absolute top-0 bottom-0 right-0 border-l divide-y-2 divide-zinc-900 border-zinc-800 bg-zinc-900 overflow-y-scroll scrollbar scrollbar-thin scrollbar-track-zinc-950 scrollbar-thumb-zinc-800">
+          <aside className="w-80 pt-1 absolute top-0 bottom-0 right-0 border-l divide-y-2 divide-zinc-900 border-zinc-800 bg-zinc-900 overflow-y-scroll scrollbar scrollbar-thin scrollbar-track-zinc-950 scrollbar-thumb-zinc-800">
             <Modules moduleIndex={0} title='Desvendando o Redux' amountOfLessons={3} />
             <Modules moduleIndex={1} title='Desvendando o Redux' amountOfLessons={3} />
             <Modules moduleIndex={2} title='Desvendando o Redux' amountOfLessons={3} />

@@ -1,3 +1,4 @@
+import * as Collapsible from "@radix-ui/react-collapsible"
 import { ChevronDown } from "lucide-react"
 import { Lesson } from "./lesson"
 
@@ -9,8 +10,8 @@ interface ModulesProps {
 
 export function Modules({title, amountOfLessons, moduleIndex}: ModulesProps) {
   return (
-    <div>
-      <button className="flex w-full items-center gap-3 bg-zinc-800 p-4">
+    <Collapsible.Root className="group" defaultOpen>
+      <Collapsible.Trigger className="flex w-full items-center gap-3 bg-zinc-800 p-4">
         <div className="flex size-8 rounded-full items-center justify-center bg-zinc-950 text-xs">{moduleIndex + 1}</div>
 
         <div className='flex flex-col gap-1 text-left'>
@@ -18,14 +19,16 @@ export function Modules({title, amountOfLessons, moduleIndex}: ModulesProps) {
           <small className="text-xs text-zinc-400">{amountOfLessons} aulas</small>
         </div>
 
-        <ChevronDown  className='size-5 ml-auto text-zinc-400'/>
-      </button>
+        <ChevronDown  className='size-5 ml-auto text-zinc-400 group-data-[state=open]:rotate-180'/>
+      </Collapsible.Trigger>
 
-      <nav className='relative flex flex-col gap-4 p-6'>
-        <Lesson title="Fundamentos de Redux" duration="09:13" />
-        <Lesson title="Fundamentos de Redux" duration="09:13" />
-        <Lesson title="Fundamentos de Redux" duration="09:13" />
-      </nav>
-    </div>
+      <Collapsible.Content>
+        <nav className='relative flex flex-col gap-4 p-6'>
+          <Lesson title="Fundamentos de Redux" duration="09:13" />
+          <Lesson title="Fundamentos de Redux" duration="09:13" />
+          <Lesson title="Fundamentos de Redux" duration="09:13" />
+        </nav>
+      </Collapsible.Content>
+    </Collapsible.Root>
   )
 }
