@@ -9,6 +9,7 @@ export function Video() {
 
     return  currentLesson
   })
+  
   return (
     <div className='w-full aspect-video bg-zinc-950'>
       <ReactPlayer
