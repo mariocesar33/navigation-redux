@@ -25,7 +25,10 @@ export function Modules({title, amountOfLessons, moduleIndex}: ModulesProps) {
   })
 
   return (
-    <Collapsible.Root className="group">
+    <Collapsible.Root
+      defaultOpen={moduleIndex === 0}
+      className="group"
+    >
       <Collapsible.Trigger className="flex w-full items-center gap-3 bg-zinc-800 p-4">
         <div className="flex size-8 rounded-full items-center justify-center bg-zinc-950 text-xs">{moduleIndex + 1}</div>
 
